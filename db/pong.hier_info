@@ -65,7 +65,7 @@ configupdate => ~NO_FANOUT~
 fbmimicbidir <> <GND>
 
 
-|pong|params:p
+|pong|vga:v
 clk => startframe.CLK
 clk => vga_vsync.CLK
 clk => vga_hsync.CLK
@@ -93,7 +93,7 @@ clk => h[9].CLK
 clk => h[10].CLK
 
 
-|pong|renderer:r
+|pong|graphics:g
 clk => blue[0]~reg0.CLK
 clk => blue[1]~reg0.CLK
 clk => blue[2]~reg0.CLK
@@ -357,7 +357,7 @@ ball_y[10] => LessThan8.IN12
 ball_y[10] => Add3.IN8
 
 
-|pong|game_logic:gl
+|pong|gamelogic:gl
 clock50 => newround.CLK
 clock50 => winner[0]~reg0.CLK
 clock50 => winner[1]~reg0.CLK
@@ -413,7 +413,7 @@ p2_up => p2_up.IN1
 p2_down => p2_down.IN1
 
 
-|pong|game_logic:gl|counter:c1
+|pong|gamelogic:gl|batpos:b1
 clk => value[0]~reg0.CLK
 clk => value[1]~reg0.CLK
 clk => value[2]~reg0.CLK
@@ -470,7 +470,7 @@ speed[4] => Add1.IN7
 speed[4] => Add0.IN7
 
 
-|pong|game_logic:gl|counter:c2
+|pong|gamelogic:gl|batpos:b2
 clk => value[0]~reg0.CLK
 clk => value[1]~reg0.CLK
 clk => value[2]~reg0.CLK
@@ -527,7 +527,7 @@ speed[4] => Add1.IN7
 speed[4] => Add0.IN7
 
 
-|pong|game_logic:gl|collision:col
+|pong|gamelogic:gl|ballcollisions:bcs
 clk => oob~reg0.CLK
 clk => dir_y~reg0.CLK
 clk => dir_x~reg0.CLK
@@ -713,7 +713,7 @@ ball_y[10] => Add2.IN8
 ball_y[10] => LessThan10.IN12
 
 
-|pong|game_logic:gl|ballcounter:bc
+|pong|gamelogic:gl|ballpos:bp
 clk => value_y[0]~reg0.CLK
 clk => value_y[1]~reg0.CLK
 clk => value_y[2]~reg0.CLK
@@ -802,13 +802,6 @@ dir_y => value_y.OUTPUTSELECT
 dir_y => value_y.OUTPUTSELECT
 
 
-|pong|oneshot:pulser
-trigger_in => always0.IN1
-trigger_in => delay.DATAIN
-clk => delay.CLK
-clk => pulse_out~reg0.CLK
-
-
 |pong|keyboard:keybd
 keyboard_clk => filter[7].DATAIN
 keyboard_data => shiftin.DATAB
@@ -840,7 +833,14 @@ reset => ready_set.ENA
 read => scan_ready~reg0.ACLR
 
 
-|pong|sevenseg:comb_67
+|pong|oneshot:pulser
+trigger_in => always0.IN1
+trigger_in => delay.DATAIN
+clk => delay.CLK
+clk => pulse_out~reg0.CLK
+
+
+|pong|sevenseg:ss
 score_p1[0] => Decoder0.IN3
 score_p1[1] => Decoder0.IN2
 score_p1[2] => Decoder0.IN1

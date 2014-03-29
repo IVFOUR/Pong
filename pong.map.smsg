@@ -1,2 +1,2 @@
-Warning (10268): Verilog HDL information at keyboard.v(47): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at pong.v(421): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at keyboard.v(51): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at pong.v(486): always construct contains both blocking and non-blocking assignments

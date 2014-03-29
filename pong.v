@@ -746,7 +746,7 @@ module sevenseg(seg0, seg1, seg2, seg3, seg4, seg5, seg6, seg7, score_p1, score_
 			seg4 = 7'b1111111;
 		end
 		else begin
-			seg5 = 7'b1111111
+			seg5 = 7'b1111111;
 			case (score_p2)
 					4'h0: seg4 = 7'b1000000; 
 					4'h1: seg4 = 7'b1111001; 

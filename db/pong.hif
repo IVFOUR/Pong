@@ -1605,78 +1605,6 @@ pll108MHz:pll|altpll:altpll_component
 
 # end
 # entity
-oneshot
-# storage
-db|pong.(9).cnf
-db|pong.(9).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-oneshot.v
-de3b9a1625680c83bb0d32b1128cbd1
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-oneshot:pulser
-}
-# macro_sequence
-
-# end
-# entity
-keyboard
-# storage
-db|pong.(10).cnf
-db|pong.(10).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-keyboard.v
-17abd2dbb220a3b0f1364858daf561e9
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-keyboard:keybd
-}
-# macro_sequence
-
-# end
-# entity
 pong
 # storage
 db|pong.(0).cnf
@@ -1688,7 +1616,7 @@ ON
 # case_sensitive
 # source_file
 pong.v
-d130a38d1b1a638604753d9f3b2b4da
+f3195d50c3ac70c641f1ef2a37a61f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1713,7 +1641,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 
 # end
 # entity
-params
+vga
 # storage
 db|pong.(3).cnf
 db|pong.(3).cnf
@@ -1724,7 +1652,7 @@ ON
 # case_sensitive
 # source_file
 pong.v
-d130a38d1b1a638604753d9f3b2b4da
+f3195d50c3ac70c641f1ef2a37a61f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1743,13 +1671,13 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-params:p
+vga:v
 }
 # macro_sequence
-ha112hb248va3vb38ha112hb248ha112hb248hc1280		va3vb38va3vb38vc1024		ha112hb248hc1280		hd48va3vb38vc1024		vd1ha112va3
+ha112		hb248		va3		vb38		ha112		hb248		ha112		hb248		hc1280		va3		vb38		va3		vb38		vc1024		ha112		hb248		hc1280		hd48		va3		vb38		vc1024		vd1		ha112		va3		
 # end
 # entity
-renderer
+graphics
 # storage
 db|pong.(4).cnf
 db|pong.(4).cnf
@@ -1760,7 +1688,7 @@ ON
 # case_sensitive
 # source_file
 pong.v
-d130a38d1b1a638604753d9f3b2b4da
+f3195d50c3ac70c641f1ef2a37a61f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1779,13 +1707,13 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-renderer:r
+graphics:g
 }
 # macro_sequence
 batwidth16batheight128hc1280		batwidth16batheight128ballsize16ballsize16
 # end
 # entity
-game_logic
+gamelogic
 # storage
 db|pong.(5).cnf
 db|pong.(5).cnf
@@ -1796,7 +1724,7 @@ ON
 # case_sensitive
 # source_file
 pong.v
-d130a38d1b1a638604753d9f3b2b4da
+f3195d50c3ac70c641f1ef2a37a61f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1815,13 +1743,13 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-game_logic:gl
+gamelogic:gl
 }
 # macro_sequence
 batspeed10batspeed10ballspeed3
 # end
 # entity
-counter
+batpos
 # storage
 db|pong.(6).cnf
 db|pong.(6).cnf
@@ -1832,7 +1760,7 @@ ON
 # case_sensitive
 # source_file
 pong.v
-d130a38d1b1a638604753d9f3b2b4da
+f3195d50c3ac70c641f1ef2a37a61f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1851,14 +1779,14 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-game_logic:gl|counter:c1
-game_logic:gl|counter:c2
+gamelogic:gl|batpos:b1
+gamelogic:gl|batpos:b2
 }
 # macro_sequence
-vc1024		vc1024		va3vc1024		batheight128
+vc1024		vc1024		va3		vc1024		batheight128
 # end
 # entity
-collision
+ballcollisions
 # storage
 db|pong.(7).cnf
 db|pong.(7).cnf
@@ -1869,7 +1797,7 @@ ON
 # case_sensitive
 # source_file
 pong.v
-d130a38d1b1a638604753d9f3b2b4da
+f3195d50c3ac70c641f1ef2a37a61f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1888,13 +1816,13 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-game_logic:gl|collision:col
+gamelogic:gl|ballcollisions:bcs
 }
 # macro_sequence
-hc1280		va3vc1024		ballsize16batwidth16ballsize16batheight128ballsize16batheight128hc1280		batwidth16ballsize16ballsize16batheight128ballsize16batheight128
+hc1280		va3		vc1024		ballsize16batwidth16ballsize16batheight128ballsize16batheight128hc1280		batwidth16ballsize16ballsize16batheight128ballsize16batheight128
 # end
 # entity
-ballcounter
+ballpos
 # storage
 db|pong.(8).cnf
 db|pong.(8).cnf
@@ -1905,7 +1833,7 @@ ON
 # case_sensitive
 # source_file
 pong.v
-d130a38d1b1a638604753d9f3b2b4da
+f3195d50c3ac70c641f1ef2a37a61f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1924,10 +1852,82 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-game_logic:gl|ballcounter:bc
+gamelogic:gl|ballpos:bp
 }
 # macro_sequence
-hc1280		ballsize16va3hc1280		ballsize16va3
+hc1280		ballsize16va3		hc1280		ballsize16va3		
+# end
+# entity
+keyboard
+# storage
+db|pong.(9).cnf
+db|pong.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+keyboard.v
+dbef8150e9ac37313cf6f2f4b137623b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+keyboard:keybd
+}
+# macro_sequence
+
+# end
+# entity
+oneshot
+# storage
+db|pong.(10).cnf
+db|pong.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+oneshot.v
+eefe381ea3ef6e5173e5d090bbab87
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+oneshot:pulser
+}
+# macro_sequence
+
 # end
 # entity
 sevenseg
@@ -1941,7 +1941,7 @@ ON
 # case_sensitive
 # source_file
 pong.v
-d130a38d1b1a638604753d9f3b2b4da
+f3195d50c3ac70c641f1ef2a37a61f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1960,7 +1960,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-sevenseg:comb_67
+sevenseg:ss
 }
 # macro_sequence
 
