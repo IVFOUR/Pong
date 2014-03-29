@@ -20,6 +20,10 @@ Up		| 'W' | KEY3
 Down	| 'S' | KEY0
 Reset	| SW17 | SW17
 
+License
+-------
+The project is licensed under the [MIT License](http://opensource.org/licenses/mit-license.html).
+
 Acknowledgments
 ---------------
 * [John Loomis](http://www.johnloomis.org/) for PS/2 keyboard input modules
